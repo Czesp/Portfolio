@@ -1,0 +1,355 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  color: #92a18a;
+  --drawing-lime: #d3f876;
+}
+
+.drawing {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  stroke: currentColor;
+  stroke-width: 0.75;
+}
+
+.drawing path,
+.drawing circle,
+.drawing ellipse,
+.gearDrawing path,
+.gearDrawing circle {
+  vector-effect: non-scaling-stroke;
+}
+
+.drawing text {
+  fill: #a0af92;
+  stroke: none;
+  font-family: var(--mono, monospace);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 1.7px;
+}
+
+.chapterLayer {
+  opacity: 0;
+  transition: opacity 700ms ease;
+}
+
+.chapterLayer[data-active="true"] {
+  opacity: 1;
+}
+
+.construction {
+  opacity: 0.38;
+  stroke: #9bac90;
+  stroke-width: 0.8;
+}
+
+.softLine {
+  opacity: 0.4;
+}
+
+.dashed {
+  stroke-dasharray: 4 7;
+  opacity: 0.59;
+}
+
+.inkAccent {
+  stroke: var(--drawing-lime);
+  stroke-width: 1;
+  opacity: 0.9;
+}
+
+.detailInk {
+  opacity: 0.54;
+  stroke: #a5b994;
+  stroke-width: 0.7;
+}
+
+.detailInk text {
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  fill: #b0bca5;
+}
+
+.shortRule {
+  stroke: #b0c68d;
+  opacity: 0.65;
+}
+
+.bearing {
+  opacity: 0.37;
+  stroke: #9eb589;
+  stroke-width: 0.7;
+}
+
+.hatching {
+  opacity: 0.22;
+  stroke: #99ab87;
+  stroke-width: 0.65;
+}
+
+.ground {
+  opacity: 0.29;
+  stroke-dasharray: 3 8;
+}
+
+.outerOrbit {
+  opacity: 0.46;
+  stroke-dasharray: 1 8;
+}
+
+.centerline {
+  opacity: 0.56;
+  stroke-dasharray: 14 6 2 6;
+}
+
+.axisMarks {
+  opacity: 0.8;
+  stroke-dasharray: none;
+}
+
+.accent {
+  stroke: var(--drawing-lime);
+  stroke-dasharray: none;
+  opacity: 0.86;
+}
+
+.crosshair {
+  opacity: 0.31;
+  stroke-width: 0.65;
+}
+
+.dimension {
+  opacity: 0.69;
+  stroke: #8fa17e;
+}
+
+.extension {
+  opacity: 0.41;
+}
+
+.rulerTicks {
+  opacity: 0.54;
+}
+
+.endTicks {
+  stroke: #b6ce99;
+}
+
+.leader {
+  opacity: 0.49;
+  stroke-width: 0.7;
+}
+
+.leader text {
+  font-size: 8px;
+  letter-spacing: 1.2px;
+}
+
+.cornerMarks {
+  opacity: 0.28;
+}
+
+.gearAssembly {
+  position: absolute;
+  top: 15%;
+  right: 14.5%;
+  width: clamp(140px, 15vw, 220px);
+  transform: rotate(-9deg);
+  opacity: 0;
+  transition: opacity 700ms ease;
+}
+
+.gearAssembly[data-active="true"] {
+  opacity: 1;
+}
+
+.gearDrawing {
+  display: block;
+  width: 100%;
+  height: auto;
+  stroke: #a2b18f;
+  stroke-width: 0.7;
+  stroke-linejoin: round;
+}
+
+.gearRotor {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0.38;
+  animation: gearTurn 96s linear infinite;
+}
+
+.largeGear {
+  animation-duration: 96s;
+}
+
+.smallGear {
+  opacity: 0.29;
+  animation-duration: 60s;
+  animation-direction: reverse;
+}
+
+.gearIndex {
+  stroke: var(--drawing-lime);
+  stroke-width: 1.1;
+}
+
+.gearHub {
+  stroke: var(--drawing-lime);
+  opacity: 0.61;
+}
+
+.gearAxes {
+  opacity: 0.18;
+  stroke-width: 0.6;
+  stroke-dasharray: 10 4 1 4;
+}
+
+.gearDatum {
+  opacity: 0.31;
+  stroke-width: 0.7;
+}
+
+.gearCaption {
+  display: block;
+  margin-top: 1px;
+  text-align: center;
+  font-family: var(--mono, monospace);
+  font-size: 6px;
+  line-height: 1.5;
+  letter-spacing: 1.7px;
+  color: #839474;
+  opacity: 0.7;
+}
+
+.drawingCaption {
+  position: absolute;
+  left: 23%;
+  right: 23%;
+  bottom: 10.5%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--mono, monospace);
+  font-size: clamp(6px, 0.5vw, 8px);
+  line-height: 1.4;
+  letter-spacing: 1.4px;
+  white-space: nowrap;
+  color: #8c9a80;
+  opacity: 0.65;
+}
+
+.captionMark {
+  width: 3px;
+  height: 3px;
+  flex: 0 0 3px;
+  background: var(--drawing-lime);
+}
+
+.captionRule {
+  flex: 1;
+  height: 1px;
+  margin: 0 6px;
+  background: #7f93622e;
+}
+
+.viewLabel {
+  color: #73816a;
+  font-size: 0.85em;
+}
+
+@keyframes gearTurn {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 760px) {
+  .gearAssembly {
+    top: 12%;
+    right: 17%;
+    width: 125px;
+  }
+
+  .gearAssembly[data-active="true"] {
+    opacity: 0.88;
+  }
+
+  .gearCaption {
+    font-size: 5px;
+    letter-spacing: 1.1px;
+  }
+
+  .leader {
+    display: none;
+  }
+
+  .dimension {
+    opacity: 0.76;
+  }
+
+  .drawing text {
+    font-size: 10px;
+    letter-spacing: 1.1px;
+  }
+
+  .construction {
+    opacity: 0.3;
+  }
+
+  .detailInk {
+    opacity: 0.47;
+  }
+
+  .detailInk text {
+    display: none;
+  }
+
+  .bearing {
+    opacity: 0.4;
+  }
+
+  .overlay[data-chapter="5"] .construction {
+    opacity: 0.39;
+  }
+
+  .drawingCaption {
+    left: 25%;
+    right: 23%;
+    bottom: 13.5%;
+    gap: 7px;
+    font-size: 6px;
+    letter-spacing: 0.8px;
+  }
+
+  .viewLabel {
+    display: none;
+  }
+
+  .captionRule {
+    margin-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gearRotor { animation: none; }
+  .chapterLayer,
+  .gearAssembly { transition: none; }
+}
+
+.overlay[data-reduced-motion="true"] .gearRotor,
+:global(.portfolio-root[data-reduced-motion="true"]) .gearRotor {
+  animation: none;
+}
+
+.overlay[data-reduced-motion="true"] .chapterLayer,
+.overlay[data-reduced-motion="true"] .gearAssembly {
+  transition: none;
+}
