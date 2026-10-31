@@ -35,7 +35,7 @@ export const profile = {
   email: "prashantbhattarai224@gmail.com",
   phone: "+1 662 518 1958",
   github: "https://github.com/prashant-bhattarai",
-  linkedin: "https://www.linkedin.com/in/prashant-bhattarai",
+  linkedin: "https://www.linkedin.com/in/prashant-bhattarai2005",
   headshot: "/portrait.jpeg",
   resume: "/resume_Bhattarai_Prashant.pdf",
   education: {
