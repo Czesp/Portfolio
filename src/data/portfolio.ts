@@ -35,8 +35,8 @@ export const profile = {
   email: "prashantbhattarai224@gmail.com",
   phone: "+1 662 518 1958",
   github: "https://github.com/prashant-bhattarai",
-  linkedin: "",
-  headshot: "",
+  linkedin: "https://www.linkedin.com/in/prashant-bhattarai",
+  headshot: "/portrait.jpeg",
   resume: "/resume_Bhattarai_Prashant.pdf",
   education: {
     institution: "Mississippi State University",
