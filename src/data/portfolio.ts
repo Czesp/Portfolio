@@ -36,8 +36,8 @@ export const profile = {
   phone: "+1 662 518 1958",
   github: "https://github.com/prashant-bhattarai",
   linkedin: "https://www.linkedin.com/in/prashant-bhattarai2005",
-  headshot: "/portrait.jpeg",
-  resume: "/resume_Bhattarai_Prashant.pdf",
+  headshot: "/Portfolio/portrait.jpeg",
+  resume: "/Portfolio/resume_Bhattarai_Prashant.pdf",
   education: {
     institution: "Mississippi State University",
     degree: "B.S. in Mechanical Engineering",
